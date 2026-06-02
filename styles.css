@@ -1299,8 +1299,15 @@ h3 {
 
   .about-photo {
     position: static;
-    max-width: 260px;
+    max-width: 240px;
     margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .about-photo img {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -1678,11 +1685,12 @@ h3 {
     transform: none !important;
   }
 
-  /* "TRANSFORMATION" — lower-leg area, well below neck */
+  /* "TRANSFORMATION" — anchored above buttons, avoids vh/svh mismatch */
   .line.outline {
     display: block;
     position: absolute;
-    top: 64vh;
+    top: auto;
+    bottom: 155px;
     left: -2vw;
     right: -2vw;
     font-size: 0.38em;
