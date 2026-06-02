@@ -1639,113 +1639,98 @@ h3 {
     width: min(100% - 24px, 1180px);
   }
 
-  h1 {
-    font-size: 3.78rem;
-  }
-
-  .cover {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: auto;
-    padding: 32px 16px 48px;
-  }
-
-  .cover-intro {
-    order: 0;
-    display: none; /* hide tagline on mobile for clean hero */
-  }
-
-  .cover-copy {
-    order: 1;
-    width: 100%;
-    display: contents;
-  }
-
-  .cover-copy h1 {
-    position: relative;
-    inset: auto;
-    order: 1;
-    width: 100%;
-    margin-bottom: 0;
-  }
-
-  .line {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    display: block;
-    text-align: center;
-  }
-
-  .line.solid {
-    width: 100%;
-    font-size: 5rem;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    transform: none !important;
-  }
-
-  .line.outline {
-    display: none;
-  }
-
   h2 {
     font-size: 2.34rem;
   }
 
-  .cover-actions,
-  .contact-actions {
-    align-items: stretch;
+  /* ── Mobile hero: 3D absolute layout, final version ── */
+  .cover {
+    min-height: calc(100svh - 60px);
+    padding: 0;
+  }
+
+  .cover-copy {
+    display: block;
+    width: 100%;
+    position: static;
+  }
+
+  .cover-copy h1 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .line {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  /* "AI" — large enough to peek behind the portrait's head */
+  .line.solid {
+    top: 4vh;
+    left: 0;
+    right: 0;
+    font-size: 54vw;
+    letter-spacing: -0.02em;
+    transform: none !important;
+  }
+
+  /* "TRANSFORMATION" — lower-leg area, well below neck */
+  .line.outline {
+    display: block;
+    position: absolute;
+    top: 64vh;
+    left: -2vw;
+    right: -2vw;
+    font-size: 0.38em;
+    letter-spacing: 0.10em;
+    transform: none !important;
+  }
+
+  /* Portrait: 3D depth preserved, fog removed */
+  .cover-portrait {
+    position: absolute;
+    left: 50%;
+    bottom: 160px;
+    width: 72vw;
+    height: 48vh;
+    transform: translate3d(-50%, 0, 74px);
+    opacity: 1;
+    animation: portraitRise 860ms cubic-bezier(0.22, 1, 0.36, 1) 380ms forwards;
+  }
+
+  .cover-portrait::before {
+    display: none;
+  }
+
+  /* Buttons pinned to bottom */
+  .cover-actions {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 28px;
+    width: auto;
+    transform: none;
     flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    opacity: 1;
+    animation: none;
   }
 
   .button {
     width: 100%;
   }
 
-  .cover-portrait {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    grid-area: auto;
-    order: 2;
-    z-index: auto;
-    width: min(320px, 84vw);
-    height: 380px;
-    margin: 4px auto 4px;
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-
-  .cover-actions {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    order: 3;
-    width: min(100%, 350px);
-    margin-top: 20px;
-    transform: none;
-    opacity: 1;
-    animation: none;
-  }
-
-  .cover-meta {
-    position: relative;
-    bottom: auto;
-    order: 5;
-    margin-top: 16px;
-    text-align: center;
+  .contact-actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .cover-meta.left,
-  .cover-meta.right {
-    left: auto;
-    right: auto;
-  }
-
   .cover-meta.right {
     display: none;
   }
@@ -1779,5 +1764,29 @@ h3 {
 
   .cursor-glow {
     display: none;
+  }
+
+  /* Maturity result — stack vertically on mobile */
+  .maturity-result-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .maturity-result-body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .maturity-radar {
+    width: 100%;
+    max-width: 340px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .maturity-result-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 }
