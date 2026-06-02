@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Leilei Fan turns AI potential into operating practice through AI development, PMO governance, and change management."
+      content="Leilei Fan — AI tools and resources for organisations navigating AI transformation."
     />
-    <title>Leilei Fan - AI Potential into Operating Practice</title>
-    <link rel="stylesheet" href="./styles.css?v=20260530-hero-polish-5" />
+    <title>Leilei Fan — AI Tools</title>
+    <link rel="stylesheet" href="./styles.css?v=20260530-v2" />
   </head>
   <body>
     <div class="cursor-glow" aria-hidden="true"></div>
@@ -21,26 +21,24 @@
         </a>
 
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#top">Main</a>
-          <a href="#thesis">Thesis</a>
-          <a href="#services">Services</a>
-          <a href="#evidence">Evidence</a>
-          <a href="#maturity">AI Check</a>
-          <a href="#contact">Contact Me</a>
+          <a href="#top"      data-i18n="nav.home">Home</a>
+          <a href="#about"    data-i18n="nav.about">About Me</a>
+          <a href="#maturity" data-i18n="nav.maturity">AI Maturity Check</a>
+          <a href="#resources"data-i18n="nav.resources">AI Resources</a>
+          <a href="#articles" data-i18n="nav.articles">AI Articles</a>
+          <a href="#contact"  data-i18n="nav.contact">Contact Me</a>
         </nav>
 
-        <button class="language-button" type="button" aria-label="Chinese version coming soon">
-          ZH
-        </button>
+        <div class="lang-switcher" role="group" aria-label="Language">
+          <button class="lang-btn is-active" data-lang="en" type="button">EN</button>
+          <span class="lang-sep" aria-hidden="true">·</span>
+          <button class="lang-btn" data-lang="de" type="button">DE</button>
+          <span class="lang-sep" aria-hidden="true">·</span>
+          <button class="lang-btn" data-lang="zh" type="button">ZH</button>
+        </div>
 
-        <button
-          class="nav-hamburger"
-          id="nav-hamburger"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-controls="mobile-nav"
-          aria-expanded="false"
-        >
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
           <span class="ham-bar"></span>
           <span class="ham-bar"></span>
           <span class="ham-bar"></span>
@@ -48,18 +46,28 @@
       </div>
     </header>
 
+    <!-- Mobile nav overlay -->
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
       <nav aria-label="Mobile navigation">
-        <a class="mobile-nav-link" href="#top">Main</a>
-        <a class="mobile-nav-link" href="#thesis">Thesis</a>
-        <a class="mobile-nav-link" href="#services">Services</a>
-        <a class="mobile-nav-link" href="#evidence">Evidence</a>
-        <a class="mobile-nav-link" href="#maturity">AI Check</a>
-        <a class="mobile-nav-link" href="#contact">Contact Me</a>
+        <a href="#top"       data-i18n="nav.home"     class="mobile-nav-link">Home</a>
+        <a href="#about"     data-i18n="nav.about"    class="mobile-nav-link">About Me</a>
+        <a href="#maturity"  data-i18n="nav.maturity" class="mobile-nav-link">AI Maturity Check</a>
+        <a href="#resources" data-i18n="nav.resources" class="mobile-nav-link">AI Resources</a>
+        <a href="#articles"  data-i18n="nav.articles" class="mobile-nav-link">AI Articles</a>
+        <a href="#contact"   data-i18n="nav.contact"  class="mobile-nav-link">Contact Me</a>
       </nav>
+      <div class="mobile-nav-lang" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button class="lang-btn" data-lang="de" type="button">DE</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button class="lang-btn" data-lang="zh" type="button">ZH</button>
+      </div>
     </div>
 
     <main id="top">
+
+      <!-- ── Hero ── -->
       <section class="cover section-shell" aria-labelledby="hero-title">
         <div class="cover-portrait" aria-hidden="true">
           <img src="./assets/profile-main-cutout.png" alt="" />
@@ -70,167 +78,75 @@
             <span class="line outline">TRANSFORMATION</span>
           </h1>
 
-          <div class="cover-actions">
-            <a class="button primary" href="#thesis">Enter profile</a>
-            <a class="button secondary" href="#contact">Contact me</a>
+          <div class="cover-actions cta-has-arrow">
+            <a class="button primary cta-pulse" href="#maturity" data-i18n="hero.cta">How AI-ready is your organisation?</a>
+            <a class="button secondary" href="#contact" data-i18n="hero.contact">Contact me</a>
           </div>
         </div>
 
         <div class="cover-meta left">Leilei Fan</div>
-        <div class="cover-meta right">Development<br />Enablement</div>
+        <div class="cover-meta right" data-i18n="meta.right">Expert</div>
       </section>
 
-      <section class="thesis section-shell" id="thesis" aria-labelledby="thesis-title">
-        <div class="section-label">The thesis</div>
-        <div class="thesis-layout">
-          <h2 id="thesis-title">AI transformation has two unfinished jobs.</h2>
-          <div class="thesis-copy">
-            <p class="scrub-text">
-              First, someone has to translate messy operational pain into a useful AI-enabled
-              artifact. Then someone has to make that artifact understandable, governed, and
-              repeatable inside the organization.
-            </p>
-            <p class="scrub-text">
-              My work sits between those two jobs: AI Development and AI Enablement.
-            </p>
+      <!-- ── About Me ── -->
+      <section class="about section-shell" id="about" aria-labelledby="about-title">
+        <div class="section-label" data-i18n="about.label">About Me</div>
+        <div class="about-layout">
+
+          <!-- Photo -->
+          <div class="about-photo" aria-label="Leilei Fan portrait">
+            <div class="about-photo-glow" aria-hidden="true"></div>
+            <canvas class="about-photo-canvas" id="about-orbit-canvas" aria-hidden="true"></canvas>
+            <img src="./assets/profile-about-halfbody.png" alt="Leilei Fan" />
           </div>
-        </div>
 
-        <div class="thesis-columns">
-          <article class="thesis-card reveal-card">
-            <span>01</span>
-            <svg class="thesis-icon" width="56" height="48" viewBox="0 0 56 48" fill="none" aria-hidden="true">
-              <circle cx="7"  cy="24" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="28" cy="7"  r="4.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="28" cy="41" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="49" cy="24" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="28" cy="24" r="3"   fill="var(--lemon)" opacity="0.9"/>
-              <line x1="11"  y1="22" x2="24"  y2="10"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="11"  y1="26" x2="24"  y2="38"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="32"  y1="10" x2="45"  y2="22"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="32"  y1="38" x2="45"  y2="26"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="11.5" y1="24" x2="24.5" y2="24" stroke="var(--lemon)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-              <line x1="31.5" y1="24" x2="44.5" y2="24" stroke="var(--lemon)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-            </svg>
-            <h3>AI Development</h3>
-            <p>
-              Turning ideas, documents, and workflows into practical AI prototypes that teams can
-              actually test.
+          <!-- Copy -->
+          <div class="about-copy">
+            <h2 id="about-title" data-i18n="about.title">I help organisations turn AI potential into operating practice.</h2>
+            <p class="about-lead" data-i18n="about.lead">
+              My work sits at the intersection of AI Development and AI Enablement — I can build the tool, and then help the organisation actually adopt it. That combination is rarer than it sounds.
             </p>
-          </article>
-          <article class="thesis-card reveal-card">
-            <span>02</span>
-            <svg class="thesis-icon" width="56" height="48" viewBox="0 0 56 48" fill="none" aria-hidden="true">
-              <circle cx="28" cy="24" r="4"  fill="var(--lemon)" opacity="0.95"/>
-              <circle cx="28" cy="24" r="11" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3.5 3"/>
-              <circle cx="28" cy="24" r="19" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3.5 4" opacity="0.55"/>
-              <circle cx="28" cy="24" r="26" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 5" opacity="0.25"/>
-            </svg>
-            <h3>AI Enablement</h3>
-            <p>
-              Designing the governance, training, stakeholder alignment, and change rhythm that
-              make AI usable beyond the demo.
-            </p>
-          </article>
-        </div>
-      </section>
 
-      <section class="operating-map section-shell" id="services" aria-labelledby="services-title">
-        <div class="section-label">Services</div>
-        <div class="map-heading">
-          <h2 id="services-title">Where I can help.</h2>
-          <p>
-            I am most useful where AI ideas need both a working shape and an adoption path.
-          </p>
-        </div>
+            <!-- Proof points -->
+            <ul class="about-proof">
+              <li>
+                <strong data-i18n="about.proof1.title">AI Agent Development</strong>
+                <span data-i18n="about.proof1.text"> — Identify operational pain points and translate them into working AI agents — giving teams self-service access to knowledge, without relying on colleagues.</span>
+              </li>
+              <li>
+                <strong data-i18n="about.proof2.title">AI Use Case Discovery &amp; Scaling</strong>
+                <span data-i18n="about.proof2.text"> — Facilitate structured processes to surface, score, and prioritise AI opportunities across an organisation. From idea to implementation roadmap.</span>
+              </li>
+              <li>
+                <strong data-i18n="about.proof3.title">AI Maturity Uplift</strong>
+                <span data-i18n="about.proof3.text"> — Assess where teams actually stand on AI readiness. Design the training, governance, and adoption rhythm that makes AI stick beyond the pilot.</span>
+              </li>
+            </ul>
 
-        <ol class="map-steps">
-          <li class="reveal-card">
-            <span>01</span>
-            <strong>AI workflow prototyping</strong>
-            <p>Turning unclear operational needs into testable AI-enabled workflows.</p>
-          </li>
-          <li class="reveal-card">
-            <span>02</span>
-            <strong>AI adoption enablement</strong>
-            <p>Helping teams understand when, where, and how AI should enter their work.</p>
-          </li>
-          <li class="reveal-card">
-            <span>03</span>
-            <strong>PMO and governance support</strong>
-            <p>Creating the rhythm, ownership, and decision structure around transformation work.</p>
-          </li>
-          <li class="reveal-card">
-            <span>04</span>
-            <strong>AI maturity discovery</strong>
-            <p>Diagnosing where a team or organisation sits on the AI readiness curve — and what the next step looks like.</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="evidence section-shell" id="evidence" aria-labelledby="evidence-title">
-        <div class="section-label">Evidence</div>
-        <div class="evidence-heading">
-          <h2 id="evidence-title">Selected signals from my work.</h2>
-        </div>
-
-        <div class="evidence-list">
-          <article class="evidence-item reveal-card">
-            <div class="evidence-index">01</div>
-            <div>
-              <p class="evidence-meta">E.ON · AI Development</p>
-              <h3>AI agent for onboarding</h3>
+            <div class="about-tags" aria-label="Core capabilities">
+              <span data-i18n="about.tag1">AI Development</span>
+              <span data-i18n="about.tag2">AI Enablement</span>
+              <span data-i18n="about.tag3">AI Project Management</span>
+              <span data-i18n="about.tag4">Digital Transformation</span>
+              <span data-i18n="about.tag5">Change Management</span>
+              <span data-i18n="about.tag6">Project Management</span>
             </div>
-            <p>
-              Built an AI-enabled onboarding agent that helps new joiners access internal knowledge
-              independently — reducing dependency on colleagues for routine questions.
-            </p>
-            <strong>Enterprise AI tool building, from concept to working prototype</strong>
-          </article>
-
-          <article class="evidence-item reveal-card">
-            <div class="evidence-index">02</div>
-            <div>
-              <p class="evidence-meta">E.ON · AI Enablement</p>
-              <h3>AI use case programme</h3>
-            </div>
-            <p>
-              Led structured conversations across teams to surface AI opportunities, prioritise
-              ideas, and build the adoption readiness needed for AI to move beyond experimentation.
-            </p>
-            <strong>From AI curiosity to organisation-wide adoption readiness</strong>
-          </article>
-
-          <article class="evidence-item reveal-card">
-            <div class="evidence-index">03</div>
-            <div>
-              <p class="evidence-meta">Personal · AI Development</p>
-              <h3>This website</h3>
-            </div>
-            <p>
-              Designed, built, and iterated this site in collaboration with AI — from layout and
-              visual identity to copy and interaction design. A working example of what building
-              with AI looks like when you understand both the tools and the craft.
-            </p>
-            <strong>AI-assisted design and development, end to end</strong>
-          </article>
-          <div class="evidence-more reveal-card">
-            <span class="evidence-more-label">More to be explored</span>
-            <p>Several AI projects currently in development. Details to follow as they take shape.</p>
           </div>
+
         </div>
       </section>
 
+      <!-- ── AI Maturity Check ── -->
       <section class="maturity section-shell" id="maturity" aria-labelledby="maturity-title">
-        <div class="section-label">AI Maturity Check</div>
+        <div class="section-label" data-i18n="maturity.label">AI Maturity Check</div>
 
         <!-- Landing state -->
         <div class="maturity-landing" id="maturity-landing">
           <div class="maturity-landing-copy">
-            <h2 id="maturity-title">Where does your organisation stand on AI?</h2>
-            <p>10 questions. About 3 minutes. A clear picture across five dimensions — with no sign-up required.</p>
+            <h2 id="maturity-title" data-i18n="maturity.landing.title">Where does your organisation stand on AI?</h2>
+            <p data-i18n="maturity.landing.p">10 questions. About 3 minutes. A clear picture across five dimensions — with no sign-up required.</p>
           </div>
-          <button class="button primary maturity-start-btn" id="maturity-start" type="button">
+          <button class="button primary maturity-start-btn" id="maturity-start" type="button" data-i18n="maturity.start">
             Start the assessment
           </button>
         </div>
@@ -245,7 +161,7 @@
           <p class="maturity-q-text" id="maturity-q-text"></p>
           <div class="maturity-options" id="maturity-options" role="radiogroup"></div>
           <div class="maturity-nav">
-            <button class="maturity-back-link" id="maturity-back" type="button">← Previous question</button>
+            <button class="maturity-back-link" id="maturity-back" type="button" data-i18n="maturity.back">← Previous question</button>
           </div>
         </div>
 
@@ -253,40 +169,79 @@
         <div class="maturity-result" id="maturity-result" hidden>
           <div class="maturity-result-header">
             <div>
-              <p class="maturity-result-level-label">Your AI Maturity Level</p>
+              <p class="maturity-result-level-label" data-i18n="maturity.result.label">Your AI Maturity Level</p>
               <h2 class="maturity-result-level" id="maturity-result-level"></h2>
               <p class="maturity-result-summary" id="maturity-result-summary"></p>
             </div>
-            <button class="button secondary maturity-restart-btn" id="maturity-restart" type="button">Retake</button>
+            <button class="button secondary maturity-restart-btn" id="maturity-restart" type="button" data-i18n="maturity.restart">Retake</button>
           </div>
           <div class="maturity-result-body">
             <canvas class="maturity-radar" id="maturity-radar" width="440" height="400" aria-hidden="true"></canvas>
             <div class="maturity-scores" id="maturity-scores"></div>
           </div>
           <div class="maturity-result-cta">
-            <p>Want to understand what the next step looks like for your organisation?</p>
-            <a class="button primary" href="#contact">Let's talk</a>
+            <p data-i18n="maturity.result.cta.p">Want to understand what the next step looks like for your organisation?</p>
+            <a class="button primary" href="#contact" data-i18n="maturity.result.cta.link">Let's talk</a>
           </div>
         </div>
       </section>
 
+      <!-- ── AI Resources (coming soon) ── -->
+      <section class="operating-map section-shell" id="resources" aria-labelledby="resources-title">
+        <div class="section-label" data-i18n="resources.label">AI Resources</div>
+        <div class="map-heading">
+          <h2 id="resources-title" data-i18n="resources.title">Curated tools and frameworks.</h2>
+          <p data-i18n="resources.p">A growing library of resources for teams getting serious about AI — tools, guides, and experts worth knowing.</p>
+        </div>
+        <div class="evidence-more" style="margin-top: 40px;">
+          <span class="under-construction-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            Under construction
+          </span>
+          <span class="evidence-more-label" data-i18n="resources.soon.label">Coming soon</span>
+          <p data-i18n="resources.soon.p">This section is under development. Check back soon — or follow along on LinkedIn.</p>
+        </div>
+      </section>
+
+      <!-- ── AI Articles (coming soon) ── -->
+      <section class="operating-map section-shell" id="articles" aria-labelledby="articles-title">
+        <div class="section-label" data-i18n="articles.label">AI Articles</div>
+        <div class="map-heading">
+          <h2 id="articles-title" data-i18n="articles.title">Thinking on AI transformation.</h2>
+          <p data-i18n="articles.p">Articles on what actually works when organisations try to adopt AI — beyond the hype and the demos.</p>
+        </div>
+        <div class="evidence-more" style="margin-top: 40px;">
+          <span class="under-construction-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            Under construction
+          </span>
+          <span class="evidence-more-label" data-i18n="articles.soon.label">Coming soon</span>
+          <p data-i18n="articles.soon.p">Writing in progress. First articles dropping soon.</p>
+        </div>
+      </section>
+
+      <!-- ── Contact ── -->
       <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
         <div>
-          <div class="section-label">Contact Me</div>
-          <h2 id="contact-title">Based in Germany. Building and enabling AI transformation across Europe.</h2>
+          <div class="section-label" data-i18n="contact.label">Contact Me</div>
+          <h2 id="contact-title" data-i18n="contact.title">Based in Germany. Building and enabling AI transformation across Europe.</h2>
         </div>
         <div class="contact-actions">
-          <a class="button primary" href="mailto:leileifan.de@gmail.com">Email me</a>
+          <a class="button primary" href="mailto:leileifan.de@gmail.com" data-i18n="contact.email">Email me</a>
           <a
             class="button secondary"
             href="https://linkedin.com/in/leilei-fan-70051c72"
             target="_blank"
             rel="noreferrer"
-          >
-            Connect on LinkedIn
-          </a>
+            data-i18n="contact.linkedin"
+          >Connect on LinkedIn</a>
         </div>
       </section>
+
     </main>
 
     <script src="./script.js"></script>
